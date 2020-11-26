@@ -28,7 +28,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         profile_round=findViewById(R.id.profile_img);
-        GradientDrawable drawable=(GradientDrawable)context.getDrawable(mcontext,R.drawable.background_round);
+        //GradientDrawable drawable=(GradientDrawable)context.getDrawable(mcontext,R.drawable.background_round);
+
+        GradientDrawable drawable=(GradientDrawable)mcontext.getDrawable(R.drawable.background_round);
 
         profile_round.setBackground(drawable);
         profile_round.setClipToOutline(true);
