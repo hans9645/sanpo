@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity"
-    android:background="@color/backgroundcolor"
+    android:background="@drawable/xmas"
     >
 
 
@@ -21,11 +21,13 @@
         />
 
     <ImageView
+        android:id="@+id/profile_img"
         android:layout_width="150dp"
-        android:layout_height="140dp"
+        android:layout_height="150dp"
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
-        android:src="@mipmap/ic_nuri_round" />
+        android:src="@mipmap/ic_nuri_round"
+         />
 
     <TextView
         android:layout_width="wrap_content"
