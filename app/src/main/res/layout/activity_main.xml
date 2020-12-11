@@ -25,27 +25,32 @@
         />
 
 
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="140dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:src="@mipmap/ic_nuri_round" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:text="이름 :    Sevazchan    "
+        />
+
     <Button
         android:id="@+id/btn_open"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="열려라 참깨"/>
 
-    <ImageView
-        android:layout_width="150dp"
-        android:layout_height="140dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="40dp"
-        android:src="@mipmap/ic_nuri_round" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 
 

@@ -4,7 +4,7 @@
     android:layout_width="240dp"
     android:layout_height="match_parent"
     android:layout_gravity="start"
-    android:background="#84AFFA"
+    android:background="#DD2E2E2E"
     android:orientation="vertical"
     android:id="@+id/drawer">
 
@@ -13,29 +13,76 @@
         android:id="@+id/btn_close"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="메뉴닫기"
-        android:layout_margin="10dp"/>
+        android:text="HOME"
+        android:layout_marginTop="10dp"/>
 
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="MY MENU"
+        android:textColor="#000000"
         android:gravity="center"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#506BFB"
         android:layout_margin="10dp"
         android:orientation="vertical">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_nuri_round"
+            android:text="hello"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Test 메뉴"
+            android:text="Test 메뉴1"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_margin="3dp"
+            android:background="#92FB96"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Test 메뉴2"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_margin="3dp"
             android:gravity="center"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Test 메뉴3"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_margin="3dp"
+            android:background="#4CAF50"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Test 메뉴4"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_margin="3dp"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Test 메뉴5"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_margin="3dp"
+            android:gravity="center"
+            android:background="#4CAF50"/>
     </LinearLayout>
 
 </LinearLayout>
