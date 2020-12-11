@@ -18,7 +18,6 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="GO 산책"
         android:textSize="40dp"
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
@@ -35,6 +34,7 @@
 
 
     <TextView
+        android:id="@+id/tv_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -43,6 +43,12 @@
         android:textStyle="bold"
         android:text="이름 :    Sevazchan    "
         />
+
+    <Button
+        android:id="@+id/btn_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="수정"/>
 
     <Button
         android:id="@+id/btn_open"

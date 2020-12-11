@@ -21,8 +21,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="MY MENU"
-        android:textColor="#000000"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
         android:gravity="center"/>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -35,6 +38,7 @@
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_nuri_round"
             android:text="hello"/>
+
 
         <TextView
             android:layout_width="match_parent"
