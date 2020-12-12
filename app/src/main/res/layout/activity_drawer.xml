@@ -4,7 +4,7 @@
     android:layout_width="240dp"
     android:layout_height="match_parent"
     android:layout_gravity="start"
-    android:background="#DD2E2E2E"
+    android:background="#2E2E2E"
     android:orientation="vertical"
     android:id="@+id/drawer">
 
@@ -24,7 +24,9 @@
         android:textSize="20dp"
         android:textStyle="bold"
         android:textColor="#FFFFFF"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="7dp"/>
 
 
     <LinearLayout
@@ -33,60 +35,138 @@
         android:layout_margin="10dp"
         android:orientation="vertical">
 
-        <ImageButton
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:src="@mipmap/ic_nuri_round"
-            android:text="hello"/>
+            >
+
+            <ImageView
+                android:id="@+id/user_image1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_nuri_round"
+                android:layout_alignParentLeft="true"
+                />
+
+            <TextView
+                android:id="@+id/side_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/user_image1"
+                android:layout_alignTop="@+id/user_image1"
+                android:textColor="#FFFFFF"
+                android:text="@string/dog_name"/>
 
 
-        <TextView
+            <TextView
+                android:id="@+id/what"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/user_image1"
+                android:layout_below="@+id/side_name"
+                android:text="what?"
+                android:textColor="#FFFFFF"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="1dp"/>
+
+            <RatingBar
+                android:id="@+id/love"
+                style="@android:style/Widget.DeviceDefault.Light.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/what"
+                android:layout_marginLeft="1dp"
+                android:layout_marginTop="1dp"
+                android:layout_toRightOf="@+id/user_image1"
+                android:layout_marginBottom="15dp"/>
+
+
+
+        </RelativeLayout>
+
+        <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Test 메뉴1"
+            android:textSize="20dp"
+            android:text="Let's WALK"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_margin="5dp"
+            android:layout_marginTop="20dp"
             android:gravity="center"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:layout_margin="3dp"
-            android:background="#92FB96"/>
+            android:onClick="onClick"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Test 메뉴2"
+            android:text="Friends"
             android:textSize="20dp"
+            android:textColor="@color/white"
             android:textStyle="bold"
-            android:layout_margin="3dp"
+            android:layout_margin="5dp"
+            android:layout_marginTop="20dp"
             android:gravity="center"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Test 메뉴3"
+            android:text="Chat"
             android:gravity="center"
             android:textSize="20dp"
+            android:textColor="@color/white"
             android:textStyle="bold"
-            android:layout_margin="3dp"
-            android:background="#4CAF50"/>
+            android:layout_margin="5dp"
+            />
+
+
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Test 메뉴4"
+            android:text="SHOP for DOG"
+            android:gravity="center"
             android:textSize="20dp"
+            android:textColor="@color/white"
             android:textStyle="bold"
-            android:layout_margin="3dp"
+            android:layout_margin="5dp"
+            />
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="History"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_margin="5dp"
             android:gravity="center"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Test 메뉴5"
+            android:text="Customer Service"
             android:textSize="20dp"
             android:textStyle="bold"
-            android:layout_margin="3dp"
+            android:layout_margin="5dp"
             android:gravity="center"
-            android:background="#4CAF50"/>
+            android:textColor="@color/white"/>
+
+
     </LinearLayout>
+
+
+
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+
+    </ListView>
+
 
 </LinearLayout>

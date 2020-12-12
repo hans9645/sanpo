@@ -5,7 +5,10 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+
+import android.app.FragmentManager;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -13,15 +16,32 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+
+
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.util.Map;
+
 public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout drawerLayout;
     private View drawerView;
-
+//    private FragmentManager fragmentManager;
+//    private MapFragment mapFragment;
 
 
     Button btn_dialog;
     TextView tv_result;
+    TextView side_name;
+    TextView what;
+    TextView condition_today;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +78,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         btn_dialog=(Button)findViewById(R.id.btn_dialog);
-        tv_result=(TextView)findViewById(R.id.tv_result);
+        tv_result=(TextView)findViewById(R.id.custom_name);
+        side_name=(TextView)findViewById(R.id.side_name);
 
         btn_dialog.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         String result=et.getText().toString();
                         tv_result.setText(result);
+                        side_name.setText(result);
                         dialog.dismiss();
                     }
                 });
@@ -92,6 +114,16 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        condition_today=(TextView) findViewById(R.id.condition_today);
+        what=(TextView) findViewById(R.id.what);
+
+        check();//반려동물 기분상태 랜덤으로 바꿈
+
+//
+//        fragmentManager=getFragmentManager();
+//        mapFragment=(MapFragment)fragmentManager.findFragmentById(R.id.googleMap);
+//        mapFragment.getMapAsync(this);
 
     }
 
@@ -117,4 +149,46 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+
+    public void check() {
+        int rand = (int)(Math.random() * 4);
+        switch (rand) {
+            case 0:
+                what.setText("좋음");
+                condition_today.setText("좋음");
+                 break;
+            case 1:
+                what.setText("조금 좋음");
+                condition_today.setText("조금 좋음");
+                break;
+            case 2:
+                what.setText("별로");
+                condition_today.setText("별로");
+                break;
+            case 3:
+                what.setText("나쁨");
+                condition_today.setText("나쁨");
+                break;
+        }
+
+}
+
+    public void onClick(View view) {
+        Intent intent=new Intent(this,MapActivity.class);
+        startActivity(intent);
+    }
+
+
+
+//    @Override
+//    public void onMapReady(GoogleMap googleMap) {//마커꼽는거
+//        LatLng location = new LatLng(35.88848, 128.61007);//공대 12호관
+//        MarkerOptions markerOptions=new MarkerOptions();
+//        markerOptions.title("공대 12호관");
+//        markerOptions.snippet("모바일앱프로그래밍 수업 장소");
+//        markerOptions.position(location);
+//        googleMap.addMarker(markerOptions);
+//        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location,15));
+//
+ // }
 }

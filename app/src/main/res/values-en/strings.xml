@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">sanpo_projects</string>
+    <string name="app_name">Let NURI</string>
+    <string name="dog_name" id="@+id/dog_name">temporary</string>
+    <string name="condition4dog" >임시이름</string>
 </resources>
