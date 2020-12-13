@@ -64,12 +64,12 @@ public class friends_listactivity extends AppCompatActivity {
             TextView year=(TextView) rowView.findViewById(R.id.releaseYear);
 
             title.setText(String.valueOf(titles[position]));
-            //imageView.setImageResource(images[position]);
+            imageView.setImageResource(images[position]);
             int rand = (int)(Math.random() * 4);
 
             rating.setText("8."+rand*position);
             genre.setText("we are friend");
-            year.setText("since"+2000+rand+"");
+            year.setText("since"+200+rand+"");
 
             return rowView;
         }

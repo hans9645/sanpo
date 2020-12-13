@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder ad= new AlertDialog.Builder(MainActivity.this);
-                ad.setIcon(R.mipmap.ic_launcher);
+                ad.setIcon(R.mipmap.ic_nuri_foreground);
                 ad.setTitle("설정");
                 ad.setMessage("반려동물의 이름을 무엇으로 설정하겠습니까?");
 
@@ -113,6 +113,11 @@ public class MainActivity extends AppCompatActivity {
         check();//반려동물 기분상태 랜덤으로 바꿈
 
 
+
+    }
+
+    public void comebackhome(View view){//home버튼 실행 코드
+        setContentView(R.layout.activity_main);
     }
 
     @Override
@@ -191,7 +196,7 @@ public class MainActivity extends AppCompatActivity {
 
 }
 
-    public void onClick(View view) {
+    public void onClick(View view) {// 노래 재생
         Intent intent=new Intent(this,MapActivity.class);
         startActivity(intent);
         Intent intent2 =new Intent(this,MusicServices.class);
@@ -200,13 +205,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void onClick_4friendlist(View view) {
+    public void onClick_4friendlist(View view) {//friend list 인텐트로 실행하기
         Intent intent1=new Intent(this, friends_listactivity.class);
         startActivity(intent1);
+
     }
 
 
-    public void onButtonNext(View view) {
+    public void onButtonNext(View view) { //쇼핑리스트 인텐트로 실행하기
       //  setContentView(new MyCustomView(this));
         Intent intent1=new Intent(this, shop_listactivity.class);
         startActivity(intent1);
@@ -218,4 +224,18 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void gotogithub(View view) {
+        Intent intent = new Intent(Intent.ACTION_VIEW,
+                Uri.parse("https://github.com/hans9645/sanpo"));
+        startActivity(intent);
+    }
+
+    public void openhistory(View view){
+        setContentView(R.layout.history);
+
+    }
+
+    public void openchat(View view){
+        setContentView(R.layout.chatting);
+    }
 }

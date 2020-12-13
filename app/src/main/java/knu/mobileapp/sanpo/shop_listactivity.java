@@ -19,19 +19,14 @@ import androidx.appcompat.app.AppCompatActivity;
 public class shop_listactivity extends AppCompatActivity {
 
     ListView list1;
-    String[] titles={"개 껌","개 인형1","개 사료","개 물통","개 목줄","개 발톱깍이","개 장난감","예방접종 ","개 인형","강인","달마"};
+    String[] titles={"개 껌","개껌인형","사료","물통","목줄","예방접종 "};
     Integer [] images={
-            R.drawable.a1,
-            R.drawable.a2,
-            R.drawable.a3,
-            R.drawable.a4,
-            R.drawable.a5,
-            R.drawable.a6,
-            R.drawable.a7,
-            R.drawable.a8,
-            R.drawable.a9,
-            R.drawable.a10,
-            R.drawable.a11
+            R.drawable.gum,
+            R.drawable.toy,
+            R.drawable.saryo,
+            R.drawable.water,
+            R.drawable.neck,
+            R.drawable.shot
     };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +61,7 @@ public class shop_listactivity extends AppCompatActivity {
             TextView year=(TextView) rowView.findViewById(R.id.releaseYear);
 
             title.setText(String.valueOf(titles[position]));
-            //imageView.setImageResource(images[position]); // 왜 안되는 건지?
+            imageView.setImageResource(images[position]); // 왜 안되는 건지?
 
             int rand = (int)(Math.random() *40000);
             int price=2000+rand-(2000+rand)%100;
@@ -76,7 +71,7 @@ public class shop_listactivity extends AppCompatActivity {
             }else genre.setText("FOOD");
 
 
-            year.setText(2000+price+"");
+            year.setText(2000+price+"won");
 
             return rowView;
         }

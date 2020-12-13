@@ -61,7 +61,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         markerOptions.snippet("모바일앱프로그래밍 수업 장소");
         markerOptions.position(location);
         mMap.addMarker(markerOptions);
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 15));
+       mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 15));
 
     }
 
@@ -90,7 +90,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                 if(location != null){
                     LatLng myLocation = new LatLng(location.getLatitude(),location.getLongitude());
                     mMap.addMarker(new MarkerOptions().position(myLocation).title("현재 위치"));
-                    mMap.animateCamera(CameraUpdateFactory.zoomTo(17.0f));
+                   // mMap.animateCamera(CameraUpdateFactory.zoomTo(17.0f));
 
                     mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener(){
                         @Override
