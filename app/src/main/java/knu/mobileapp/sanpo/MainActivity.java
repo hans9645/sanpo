@@ -6,27 +6,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 
-import android.app.FragmentManager;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-
-
-import com.google.android.gms.maps.MapFragment;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
-
-import java.util.Map;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,12 +32,13 @@ public class MainActivity extends AppCompatActivity {
     TextView side_name;
     TextView what;
     TextView condition_today;
-
+    MenuItem item1,item2,item3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         drawerLayout=(DrawerLayout)findViewById(R.id.drawer_layout);
         drawerView=(View)findViewById(R.id.drawer);
@@ -120,11 +112,37 @@ public class MainActivity extends AppCompatActivity {
 
         check();//반려동물 기분상태 랜덤으로 바꿈
 
-//
-//        fragmentManager=getFragmentManager();
-//        mapFragment=(MapFragment)fragmentManager.findFragmentById(R.id.googleMap);
-//        mapFragment.getMapAsync(this);
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        //메뉴를 확장시켜라
+
+        this.getMenuInflater().inflate(R.menu.mymenu,menu);
+        //MenuInflater inflater = getMenuInflater();
+        //inflater.inflate(R.menu.mymenu, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        switch(item.getItemId()){
+            case R.id.apple:
+                Toast.makeText(this,"개발자에게 전화하기", Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:01024749645"));
+                startActivity(intent);
+                break;
+            case R.id.banana:
+                Toast.makeText(this,"2015114563", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.graph:
+                Toast.makeText(this,"김한영", Toast.LENGTH_SHORT).show();
+                break;
+
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     DrawerLayout.DrawerListener listener = new DrawerLayout.DrawerListener() {
@@ -176,19 +194,28 @@ public class MainActivity extends AppCompatActivity {
     public void onClick(View view) {
         Intent intent=new Intent(this,MapActivity.class);
         startActivity(intent);
+        Intent intent2 =new Intent(this,MusicServices.class);
+        intent2.putExtra("command",1);
+        startService(intent2);
     }
 
 
+    public void onClick_4friendlist(View view) {
+        Intent intent1=new Intent(this, friends_listactivity.class);
+        startActivity(intent1);
+    }
 
-//    @Override
-//    public void onMapReady(GoogleMap googleMap) {//마커꼽는거
-//        LatLng location = new LatLng(35.88848, 128.61007);//공대 12호관
-//        MarkerOptions markerOptions=new MarkerOptions();
-//        markerOptions.title("공대 12호관");
-//        markerOptions.snippet("모바일앱프로그래밍 수업 장소");
-//        markerOptions.position(location);
-//        googleMap.addMarker(markerOptions);
-//        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location,15));
-//
- // }
+
+    public void onButtonNext(View view) {
+      //  setContentView(new MyCustomView(this));
+        Intent intent1=new Intent(this, shop_listactivity.class);
+        startActivity(intent1);
+    }
+
+    public void callMe(View view){
+        Intent intent=new Intent(Intent.ACTION_DIAL);
+        intent.setData(Uri.parse("tel:01024749645"));
+        startActivity(intent);
+    }
+
 }

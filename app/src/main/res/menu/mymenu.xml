@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/apple"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="contact Developer"
+        />
+
+    <item android:id="@+id/banana"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="2015114563"
+        />
+
+    <item android:id="@+id/graph"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="김한영"
+        />
+</menu>

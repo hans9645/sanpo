@@ -2,9 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="knu.mobileapp.sanpo">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>//로케이션사용권한
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_nuri_round"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_nuri_round"
         android:supportsRtl="true"
@@ -16,10 +17,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <service android:name=".MusicServices" android:enabled="true">
 
+        </service>
 
 
         <activity android:name=".MapActivity" android:label="지도 엑티비티"></activity>
+
+        <activity android:name=".friends_listactivity" android:label="친구 리스트"></activity>
+
+
+        <activity android:name=".shop_listactivity" android:label="쇼핑 리스트"></activity>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

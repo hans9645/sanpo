@@ -97,7 +97,7 @@
             android:gravity="center"
             android:onClick="onClick"/>
 
-        <TextView
+        <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Friends"
@@ -106,9 +106,10 @@
             android:textStyle="bold"
             android:layout_margin="5dp"
             android:layout_marginTop="20dp"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:onClick="onClick_4friendlist"/>
 
-        <TextView
+        <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Chat"
@@ -121,7 +122,8 @@
 
 
 
-        <TextView
+        <Button
+            android:id="@+id/buttonNext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="SHOP for DOG"
@@ -130,11 +132,11 @@
             android:textColor="@color/white"
             android:textStyle="bold"
             android:layout_margin="5dp"
-            />
+            android:onClick="onButtonNext"/>
 
 
 
-        <TextView
+        <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="History"
@@ -152,7 +154,8 @@
             android:textStyle="bold"
             android:layout_margin="5dp"
             android:gravity="center"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white"
+            android:onClick="callMe"/>
 
 
     </LinearLayout>
@@ -164,7 +167,6 @@
         android:id="@+id/list"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
-
 
     </ListView>
 
