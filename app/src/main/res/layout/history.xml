@@ -37,8 +37,6 @@
             android:layout_gravity="center"/>
 
 
-
-
     </LinearLayout>
 
     <include layout="@layout/activity_drawer"/>
